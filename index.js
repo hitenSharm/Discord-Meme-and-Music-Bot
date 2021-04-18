@@ -1,25 +1,36 @@
-require('dotenv').config();
-const Discord = require('discord.js');
+require("dotenv").config();
+const Discord = require("discord.js");
 const bot = new Discord.Client();
 const TOKEN = process.env.TOKEN;
+//bot functions
+const fillMemes = require("./botFunctions/fillmemes");
+const sendgif = require("./botFunctions/fillGifs");
 
 bot.login(TOKEN);
 
-bot.on('ready', () => {
+bot.on("ready", () => {
   console.info(`Logged in as ${bot.user.tag}!`);
 });
 
-bot.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('pong');
-    msg.channel.send('pong');
+bot.on("message", async (msg) => {
+  if (msg.content === "!okbuddymeme") {
+    var meme = await fillMemes();
+    const embed = new Discord.RichEmbed()
+      .setTitle(meme.title)
+      .setImage(meme.image, 300, 300)
+      .setFooter(`(delay: ${Date.now() - msg.createdAt}ms)` + " Bot by Tecno");
+    msg.channel.send(embed);
+  }
 
-  } else if (msg.content.startsWith('!kick')) {
-    if (msg.mentions.users.size) {
-      const taggedUser = msg.mentions.users.first();
-      msg.channel.send(`You wanted to kick: ${taggedUser.username}`);
-    } else {
-      msg.reply('Please tag a valid user!');
-    }
+  if (msg.content === "!okbuddygif") {
+    var gif = await sendgif();
+    msg.channel.send(gif);
+    msg.reply(`*(delay: ${Date.now() - msg.createdAt}ms)*`);
+  }
+
+  if (msg.content === "!help") {
+    msg.channel.send(
+      " 1. !okbuddymeme command for viewing a meme \n2. !okbuddygif for a random gif"
+    );
   }
 });
