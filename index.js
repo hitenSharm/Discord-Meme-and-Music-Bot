@@ -5,6 +5,7 @@ const TOKEN = process.env.TOKEN;
 //bot functions
 const fillMemes = require("./botFunctions/fillmemes");
 const sendgif = require("./botFunctions/fillGifs");
+const grabInsult=require('./botFunctions/insult')
 
 bot.login(TOKEN);
 
@@ -28,9 +29,15 @@ bot.on("message", async (msg) => {
     msg.reply(`*(delay: ${Date.now() - msg.createdAt}ms)*`);
   }
 
+  if(msg.content === '!insult'){
+    const reply= await grabInsult();    
+    msg.channel.send(reply);
+  }
+
   if (msg.content === "!help") {
     msg.channel.send(
-      " 1. !okbuddymeme command for viewing a meme \n2. !okbuddygif for a random gif"
+      " 1. !okbuddymeme command for viewing a meme \n2. !okbuddygif for a random gif \n3. Generate an insult"
     );
   }
+
 });
