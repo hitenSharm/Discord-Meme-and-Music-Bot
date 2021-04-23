@@ -2,10 +2,13 @@ require("dotenv").config();
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const TOKEN = process.env.TOKEN;
-//bot functions
-const fillMemes = require("./botFunctions/fillmemes");
-const sendgif = require("./botFunctions/fillGifs");
-const grabInsult=require('./botFunctions/insult')
+const prefix = "!";
+//read command files
+const fs = require("fs");
+bot.commands = new Discord.Collection();
+const commandFiles = fs
+  .readdirSync("./commands")
+  .filter((file) => file.endsWith(".js"));
 
 bot.login(TOKEN);
 
@@ -13,31 +16,24 @@ bot.on("ready", () => {
   console.info(`Logged in as ${bot.user.tag}!`);
 });
 
+for (const file of commandFiles) {
+  const command = require(`./commands/${file}`);
+  bot.commands.set(command.name, command);
+}
+
 bot.on("message", async (msg) => {
-  if (msg.content === "!okbuddymeme") {
-    var meme = await fillMemes();
-    const embed = new Discord.RichEmbed()
-      .setTitle(meme.title)
-      .setImage(meme.image, 300, 300)
-      .setFooter(`(delay: ${Date.now() - msg.createdAt}ms)` + " Bot by Tecno");
-    msg.channel.send(embed);
-  }
+  if (msg.author.bot || !msg.content.startsWith(prefix)) return;
 
-  if (msg.content === "!okbuddygif") {
-    var gif = await sendgif();
-    msg.channel.send(gif);
-    msg.reply(`*(delay: ${Date.now() - msg.createdAt}ms)*`);
-  }
+  const commandBody = msg.content.slice(prefix.length);
+  const args = commandBody.split(" ");
+  const command = args.shift().toLowerCase();
 
-  if(msg.content === '!insult'){
-    const reply= await grabInsult();    
-    msg.channel.send(reply);
-  }
+  if (!bot.commands.has(command)) return;
 
-  if (msg.content === "!help") {
-    msg.channel.send(
-      " 1. !okbuddymeme command for viewing a meme \n2. !okbuddygif for a random gif \n3. Generate an insult"
-    );
+  try {
+    await bot.commands.get(command).execute(msg, args);
+  } catch (error) {
+    console.error(error);
+    msg.reply("issue!");
   }
-
 });
