@@ -4,13 +4,16 @@
   "description": "Discord bot for SitePoint",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "dev": "nodemon index"
   },
-  "author": "Michiel Mulders",
+  "author": "Hiten Sharma",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.5.1",
     "dotenv": "^8.2.0",
+    "nodemon": "^2.0.7",
     "reddit-image-fetcher": "^2.0.7",
     "tenorjs": "^1.0.8"
   }
