@@ -5,6 +5,7 @@
 3. Add Discord credentials in a `.env` file
 3. Run `node index.js`
 4. Interact with your Discord bot via your web browser
+5. Feel free to contribute your ideas!
 
 <br/>
 This is a meme bot which when called will send a random meme from selected subreddits.<br/>
