@@ -11,7 +11,7 @@
 This is a meme bot which when called will send a random meme from selected subreddits.<br/>
 It can also send 1 out of 10 randomly fetched Gifs from 6 different choices.<br/>
 Added insults from API<br/>
-Ddded Anime Image Search and Kanye West quotes and Yoda transalator
+Added Anime Image Search and Kanye West quotes and Yoda transalator
 <br/>
 
 ![gif](https://user-images.githubusercontent.com/56029311/115148239-50fbcc00-a07c-11eb-830f-5da5345d56c4.png)
