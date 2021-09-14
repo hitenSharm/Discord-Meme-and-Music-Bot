@@ -10,7 +10,7 @@ const Tenor = require("tenorjs").client({
 const sendgif = async () => {
   var gifs = [];
   var ans;
-  var randomNumber = Math.floor(Math.random() * 6);
+  var randomNumber = Math.floor(Math.random() * gifIdeas.length);
   var queryGif = gifIdeas[randomNumber];
   await Tenor.Search.Query(queryGif, "10")
     .then((Results) => {

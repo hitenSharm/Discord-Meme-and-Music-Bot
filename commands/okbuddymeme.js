@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 module.exports = {
   name: "okbuddymeme",
   description: "Sends meme",
-  async execute(msg, args) {
+  async execute(msg, args) {    
     var meme = await fillMemes();
     const embed = new Discord.RichEmbed()
       .setTitle(meme.title)

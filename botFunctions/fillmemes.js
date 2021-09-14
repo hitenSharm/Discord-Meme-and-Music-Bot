@@ -3,7 +3,7 @@ const subs = require("../choices/optionsSub");
 
 const fillMemes = async () => {
   var ans;
-  var randomNo = Math.floor(Math.random() * 6);
+  var randomNo = Math.floor(Math.random() * subs.length);
   await redditImageFetcher
     .fetch({
       type: "custom",
