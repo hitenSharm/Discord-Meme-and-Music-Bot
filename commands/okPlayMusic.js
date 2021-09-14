@@ -1,25 +1,35 @@
 const Discord = require("discord.js");
-const { Player } = require("discord-music-player");
-
-//Music bot setup
-const player = new Player(client, {
-    leaveOnEmpty: false,
-  });
-
-  client.player=player;
 
 module.exports = {
-  name: "okplay",
-  description: "Play Music",
+  name: "m",
+  description: "Work with Music",
   async execute(msg, args) {
-    let guildQueue = client.player.getQueue(msg.guild.id);
-    let queue = client.player.createQueue(msg.guild.id);
-    await queue.join(msg.member.voice.channel);
-    // console.log(args.join(' '));
-    let song = await queue.play(args.join(' ')).catch(_ => {
-      if(!guildQueue)
-          queue.stop();
-  });
-  console.log(song);
+    const guildQueue = client.player.getQueue(msg.guild.id);
+    var cmd=args[0];
+    args.shift();
+    switch (cmd) {
+      case "play":
+        let queue = client.player.createQueue(msg.guild.id);
+        await queue.join(msg.member.voice.channel);
+        let song = await queue.play(args.join(" ")).catch((_) => {
+          if (!guildQueue) queue.stop();
+        });
+        break;
+      case "stop":
+        guildQueue.stop();
+        break;
+      case "skip":
+        guildQueue.skip();
+        break;
+      case "progress":
+        const ProgressBar = guildQueue.createProgressBar();
+        msg.reply(ProgressBar.prettier);
+        break;
+      case "pause":
+        guildQueue.setPaused(true);
+        break;
+      default:
+        break;
+    }
   },
 };

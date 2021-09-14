@@ -1,6 +1,7 @@
 require("dotenv").config();
 const Discord = require("discord.js");
 const { Intents } = require('discord.js');
+const { Player } = require("discord-music-player");
 global.client = new Discord.Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_VOICE_STATES]
 });
@@ -20,6 +21,14 @@ client.login(TOKEN);
 client.on("ready", () => {
   console.info(`Logged in as ${client.user.tag}!`);
 });
+
+
+//Music bot setup
+const player = new Player(client, {
+    leaveOnEmpty: false,
+  });
+
+  client.player=player;
 
 for (const file of commandFiles) {
   const command = require(`./commands/${file}`);
