@@ -1,18 +1,39 @@
-## Installation Steps (if applicable)
+<h1 align="center">Welcome to discord-bot 👋</h1>
+<p>
+  <a href="https://www.npmjs.com/package/discord-bot" target="_blank">
+    <img alt="Version" src="https://img.shields.io/npm/v/discord-bot.svg">
+  </a>
+  <a href="#" target="_blank">
+    <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
+  </a>
+</p>
 
-1. Clone repo
-2. Run `npm install`
-3. Add Discord credentials in a `.env` file
-3. Run `node index.js`
-4. Interact with your Discord bot via your web browser
-5. Feel free to contribute your ideas!
+> A discord bot which can send memes , gifs , do reverse image search etc.gifs ,
 
-<br/>
-This is a meme bot which when called will send a random meme from selected subreddits.<br/>
-It can also send 1 out of 10 randomly fetched Gifs from 6 different choices.<br/>
-Added insults from API<br/>
-Added Anime Image Search and Kanye West quotes and Yoda transalator
-<br/>
+## Install
+
+```sh
+npm install
+```
+
+## Usage
+
+```sh
+Make sure to get a discord token!
+```
+
+## Author
+
+👤 **Hiten Sharma**
+
+* Website: https://hiten-sharma-website.netlify.app/
+* Github: [@hitenSharm](https://github.com/hitenSharm)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+***
 
 ![gif](https://user-images.githubusercontent.com/56029311/115148239-50fbcc00-a07c-11eb-830f-5da5345d56c4.png)
 ![image](https://user-images.githubusercontent.com/56029311/115998046-11485d80-a603-11eb-8b12-e9ecef04eb61.png)
