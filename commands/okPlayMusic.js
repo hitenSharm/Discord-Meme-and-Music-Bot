@@ -1,11 +1,11 @@
 const Discord = require("discord.js");
 
 module.exports = {
-  name: "m",
+  name: "obm",
   description: "Work with Music",
   async execute(msg, args) {
     const guildQueue = client.player.getQueue(msg.guild.id);
-    var cmd=args[0];
+    var cmd = args[0];
     args.shift();
     switch (cmd) {
       case "play":
@@ -14,6 +14,11 @@ module.exports = {
         let song = await queue.play(args.join(" ")).catch((_) => {
           if (!guildQueue) queue.stop();
         });
+        var embed = new Discord.MessageEmbed()
+          .setTitle("Adding to queue")
+          .setDescription(song.name)
+          .setImage(song.thumbnail,300,300);
+        msg.channel.send({ embeds: [embed] });
         break;
       case "stop":
         guildQueue.stop();
@@ -27,6 +32,9 @@ module.exports = {
         break;
       case "pause":
         guildQueue.setPaused(true);
+        break;
+      case "resume":
+        guildQueue.setPaused(false);
         break;
       default:
         break;

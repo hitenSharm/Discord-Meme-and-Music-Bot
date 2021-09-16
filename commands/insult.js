@@ -5,6 +5,8 @@ module.exports = {
   description: "Sends insults",
   async execute(msg, args) {
     const reply = await grabInsult();
-    msg.channel.send(reply.toString());
+    if(args.length===0)msg.reply(reply.toString());
+    else
+    msg.channel.send(reply.toString() + args[0]);
   },
 };

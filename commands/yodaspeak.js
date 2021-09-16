@@ -10,7 +10,6 @@ module.exports = {
       str += " ";
     }
     var ans = await yodaspeak(str);
-    console.log(ans);
     msg.channel.send(ans);
   },
 };

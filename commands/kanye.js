@@ -6,11 +6,11 @@ module.exports={
     description:'Quotes Kanye West',
     async execute(msg,args){
         var quote=await kanyeQuote();        
-        const embed = new Discord.RichEmbed()
+        const embed = new Discord.MessageEmbed()
         .setTitle('Kanye West once said : ')
         .setAuthor('Kanye')
         .setDescription(quote)
         .setImage('https://i.imgur.com/VYKss74.jpg')
-        msg.channel.send(embed);
+        msg.channel.send({embeds:[embed]});
     }
 }

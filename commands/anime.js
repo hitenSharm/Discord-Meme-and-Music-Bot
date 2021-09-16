@@ -11,7 +11,7 @@ module.exports = {
       var ans = await animeFinder(url);
       var episode = ans.episode.toString();
       var similarity = (ans.similarity * 100).toString();
-      const embed = new Discord.RichEmbed()
+      const embed = new Discord.MessageEmbed()
         .setTitle(ans.title_english)
         .setDescription(
           "Episode : " + episode + " Similarity : " + similarity + "%"
@@ -20,7 +20,7 @@ module.exports = {
           `(Time taken: ${(Date.now() - msg.createdAt) / 1000} Seconds)` +
             " Bot by Tecno"
         );
-      msg.reply(embed);
+        msg.channel.send({embeds:[embed]});
     });
   },
 };

@@ -1,7 +1,7 @@
 const sendgif = require("../botFunctions/fillGifs");
 
 module.exports = {
-  name: "okbuddygif",
+  name: "obgif",
   description: "Sends gifs",
   async execute(msg, args) {
     var gif = await sendgif();
