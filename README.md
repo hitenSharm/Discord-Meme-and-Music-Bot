@@ -25,6 +25,40 @@ Use !help to see all commands
 # Music related functions
 You will need to have ffmpeg installed on your system.
 
+# Bot Commands
+1. View a meme: 
+> !obmeme
+
+2. Generate Random gif
+> !obgif
+
+3. Generate an insult
+> !insult @username
+
+4. Generate a Kanye West quote
+> !kanyegod
+
+5. Anime Detector - Find the anime based on the image
+> drop image + !anime
+
+6. Translate text to Yoda Speak
+> !yoda + yourText
+
+7. Play Music
+> !obm play <song_name> 
+
+8. Skip Music
+> !obm skip
+
+9. Stop Music
+> !obm stop
+
+10. Pause Music
+> !obm pause
+
+11. Resume Music
+> !obm resume
+
 ## Author
 
 👤 **Hiten Sharma**
