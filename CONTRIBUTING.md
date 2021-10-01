@@ -16,7 +16,7 @@ Make sure you follow the following steps while raising a PR.
 git checkout -b <GITHUB_USERNAME>
 ```
 
-<li>Make sure that NodeJS is at V16 and DiscordJS at v13, otherwise your contributions won't be accepted.You may have to download it manually.</li>
+<li>Make sure that <b>NodeJS is at V16 and DiscordJS at v13</b>, otherwise your contributions won't be accepted.You may have to download it manually.</li>
 
 <li>Make sure to write quality code with proper comments.</li>
 
