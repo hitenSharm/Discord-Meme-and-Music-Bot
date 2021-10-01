@@ -7,8 +7,7 @@ module.exports = {
     // reply to message if there is only one arg
     if(args.length===0) {
       const reply = await grabInsult();
-      msg.reply(reply.toString());
-      return;
+      msg.reply(reply.toString());      
     }
     
     // else loop over args and send insults
