@@ -4,7 +4,7 @@ Hi, I appreciate if you wish to contribute to this.
 
 ## Steps
 
-Make sure you follow the following steps while raising a PR.
+Make sure you follow the following steps while raising a PR to the development branch.
 
 <ol>
 <li>Go through <a href="https://github.com/hitenSharm/Dicord-Meme-Bot/blob/main/README.md">README.md</a></li>
