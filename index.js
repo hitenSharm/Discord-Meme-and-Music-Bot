@@ -6,6 +6,8 @@ global.client = new Discord.Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_VOICE_STATES]
 });
 
+const handleError = require('./utils/handleError.js');
+
 const TOKEN = process.env.TOKEN;
 
 const prefix = "!";
@@ -47,8 +49,8 @@ client.on("message", async (msg) => {
   try {
     await client.commands.get(command).execute(msg, args);
   } catch (error) {
-    console.error(error);
-    msg.reply("issue!");
+    console.error(error)
+    msg.reply(handleError(error));
   }
 });
 
