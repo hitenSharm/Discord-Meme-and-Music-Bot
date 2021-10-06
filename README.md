@@ -15,6 +15,7 @@
 ```sh
 npm install
 ```
+Set the Discord Token , TENORKEY ,the name given to the bot(env.BOT) and the author username(For example, for me I will set my discord username as env.TECNO) as environment variables!
 
 ## Usage
 You will need your **NodeJS** at version **16** or above, **npm** at version **7** or above and DiscordJS at version 13.

@@ -1,6 +1,14 @@
 const {MessageEmbed} = require('discord.js');
 
+require("dotenv").config();
 const grabInsult = require("../botFunctions/insult");
+
+//pre-insult reply
+const deflect = "You dare use my own spells against me? \n ┌∩┐(◣_◢)┌∩┐";
+
+//TECNO === tecno bot / BOT === default BOT
+const TECNO = process.env.TECNO;
+const BOT = process.env.BOT;
 
 // using setTimeout to prevent repeating insults.
 // Since await only uses promises
@@ -26,7 +34,6 @@ module.exports = {
   name: "insult",
   description: "Sends insults",
   async execute(msg, args) {
-    
     //setting timeout to 2000ms
     await setTimeoutPromise(2000);
     if (args.length === 0) {
@@ -37,7 +44,16 @@ module.exports = {
 
     // else loop over args and send insults
     for (let i = 0; i < args.length; i++) {
+      //if either bots are mentioned
+      if (args[i] === TECNO || args[i] === BOT) {
+        msg.channel.send(deflect.toString());
+        //setting timeout to 2500ms
+        await setTimeoutPromise(2500);
+        const reply = await grabInsult();
+        msg.reply(reply.toString());
 
+        continue;
+      }
       //setting timeout to 2500ms
       await setTimeoutPromise(2500);
       const reply = await grabInsult();
