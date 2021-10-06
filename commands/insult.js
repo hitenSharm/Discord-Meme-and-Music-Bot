@@ -38,8 +38,8 @@ module.exports = {
     await setTimeoutPromise(2000);
     if (args.length === 0) {
       const reply = await grabInsult();
-      const insultEmbed = await embedMessage(reply.toString(), msg.author);
-      msg.channel.send({ embeds: [insultEmbed] });
+      const insultEmbed = await embedMessage(reply.toString(), "");
+      msg.reply({ embeds: [insultEmbed] });
     }
 
     // else loop over args and send insults
