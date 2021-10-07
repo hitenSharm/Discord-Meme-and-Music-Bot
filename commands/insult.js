@@ -1,3 +1,5 @@
+const {MessageEmbed} = require('discord.js');
+
 require("dotenv").config();
 const grabInsult = require("../botFunctions/insult");
 
@@ -16,6 +18,17 @@ const setTimeoutPromise = (timeout) =>
     setTimeout(resolve, timeout);
   });
 
+//embed the insult
+const embedMessage = (message, user) => {
+  //replace html entities with actual characters
+  message = message.replace(/&amp;/g,"&").replace(/&quot;/g,'"').replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&nbsp;/g," ").replace(/&apos;/g,"'");
+  const embeddedMessage = new MessageEmbed()
+  .setColor('#0099ff')
+  .setDescription(`${message} ${user}`);
+
+  return embeddedMessage;
+}
+
 // reply to message if there is only one arg
 module.exports = {
   name: "insult",
@@ -25,7 +38,8 @@ module.exports = {
     await setTimeoutPromise(2000);
     if (args.length === 0) {
       const reply = await grabInsult();
-      msg.reply(reply.toString());
+      const insultEmbed = await embedMessage(reply.toString(), "");
+      msg.reply({ embeds: [insultEmbed] });
     }
 
     // else loop over args and send insults
@@ -43,7 +57,8 @@ module.exports = {
       //setting timeout to 2500ms
       await setTimeoutPromise(2500);
       const reply = await grabInsult();
-      msg.channel.send(reply.toString() + args[i]);
+      const insultEmbed = embedMessage(reply.toString(), args[i]);
+      msg.channel.send({ embeds: [insultEmbed] });
     }
   },
 };
