@@ -21,7 +21,15 @@ module.exports = {
         msg.channel.send({ embeds: [embed] });
         break;
       case "stop":
-        guildQueue.stop();
+        //try and catch 
+        try {
+          msg.member.voice.channel.members;
+          guildQueue.stop();
+        } catch (error) {          
+          msg.reply(
+            "Only the ones who hear the music may stop the music \n -Aristotle, probably"
+          );
+        }
         break;
       case "skip":
         guildQueue.skip();
