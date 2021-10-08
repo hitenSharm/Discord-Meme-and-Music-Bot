@@ -21,19 +21,54 @@ module.exports = {
         msg.channel.send({ embeds: [embed] });
         break;
       case "stop":
-        guildQueue.stop();
+        //try and catch 
+        if(!guildQueue){
+          msg.reply("No song playing bruv")
+          break
+        }
+        try {
+          msg.member.voice.channel.members;
+          guildQueue.stop();
+        } catch (error) {          
+          msg.reply(
+            "Only the ones who hear the music may stop the music \n -Aristotle, probably"
+          );
+        }
         break;
       case "skip":
-        guildQueue.skip();
+        if(!guildQueue){
+          msg.reply("No song playing bruv")
+          break
+        }
+        try{
+          msg.member.voice.channel.members;
+          guildQueue.skip();
+        }catch(err){
+          msg.reply(
+            "Only the ones who hear the music may skip the music \n -Your mom, probably"
+          );
+        }
         break;
       case "progress":
+        if(!guildQueue){
+          msg.reply("No song playing bruv")
+          break
+        }
         const ProgressBar = guildQueue.createProgressBar();
         msg.reply(ProgressBar.prettier);
         break;
       case "pause":
+        if(!guildQueue){
+          msg.reply("No song playing bruv")
+          break
+        }
         guildQueue.setPaused(true);
         break;
       case "resume":
+        if(!guildQueue){
+          msg.reply("No song playing bruv")
+          break
+        }
         guildQueue.setPaused(false);
         break;
       default:
