@@ -1,18 +1,32 @@
 const Discord = require("discord.js");
 
+//initializing
+let queue = 0;
+let song = 0;
+let num = 0;
+
 module.exports = {
   name: "obm",
   description: "Work with Music",
   async execute(msg, args) {
+    num = 0;
+    msg.channel.members.forEach(() => {
+      num = num + 1;
+    });
     const guildQueue = client.player.getQueue(msg.guild.id);
     var cmd = args[0];
     args.shift();
     switch (cmd) {
       case "play":
-        let queue = client.player.createQueue(msg.guild.id);
+        queue = client.player.createQueue(msg.guild.id);
         await queue.join(msg.member.voice.channel);
-        let song = await queue.play(args.join(" ")).catch((_) => {
+        //setting data -> skipCounts and userRequests
+        song = await queue.play(args.join(" ")).catch((_) => {
           if (!guildQueue) queue.stop();
+        });
+        song.setData({
+          skipCounts: 0,
+          userRequest: [],
         });
         var embed = new Discord.MessageEmbed()
           .setTitle("Adding to queue")
@@ -21,18 +35,41 @@ module.exports = {
         msg.channel.send({ embeds: [embed] });
         break;
       case "stop":
-        //try and catch 
+        //try and catch
         try {
           msg.member.voice.channel.members;
           guildQueue.stop();
-        } catch (error) {          
+        } catch (error) {
           msg.reply(
             "Only the ones who hear the music may stop the music \n -Aristotle, probably"
           );
         }
         break;
       case "skip":
-        guildQueue.skip();
+        try {
+          //checks if person is in voice chat
+          msg.member.voice.channel.members;
+
+          //checks if user_id is repeating, if not adds skipCount and 
+          //appends user to userRequest
+          if (!song.data.userRequest.includes(msg.author.id)) {
+            song.data.userRequest.push(msg.author.id);
+            song.data.skipCounts = song.data.skipCounts + 1;
+            msg.reply(
+                `\n ${song.data.skipCounts} / ${
+                  num - 1
+                } want to skip`
+              );
+          }
+          //prevents repeating requests
+          else
+          msg.reply("(≖᷆︵︣≖)👎"); 
+          //checks if condition is satisfied
+          if (song.data.skipCounts >= 0.5*(num-1)) guildQueue.skip();
+        } catch (error) {
+          //if outside the VC
+          msg.reply("Why are you like this? \n Get some help");
+        }
         break;
       case "progress":
         const ProgressBar = guildQueue.createProgressBar();
