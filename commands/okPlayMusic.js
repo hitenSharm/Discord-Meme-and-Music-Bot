@@ -56,9 +56,7 @@ module.exports = {
             song.data.userRequest.push(msg.author.id);
             song.data.skipCounts = song.data.skipCounts + 1;
             msg.reply(
-                `\n ${song.data.skipCounts} / ${
-                  num - 1
-                } want to skip`
+                `\n ** ${song.data.skipCounts} / ${num - 1} ** want to skip`
               );
           }
           //prevents repeating requests
