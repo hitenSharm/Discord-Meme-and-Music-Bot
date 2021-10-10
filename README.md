@@ -68,8 +68,8 @@ You will need to have ffmpeg installed on your system.
 * Github: [@hitenSharm](https://github.com/hitenSharm)
 
 ## Contributors
-<a href = "https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo = hitenSharm/Discord-Meme-and-Music-Bot"/>
+<a href = "https://github.com/hitenSharm/Discord-Meme-and-Music-Bot/contributors">
+  <img src = "https://contrib.rocks/image?repo=hitenSharm/Discord-Meme-and-Music-Bot"/>
 </a>
 
 
