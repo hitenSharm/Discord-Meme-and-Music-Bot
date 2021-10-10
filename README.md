@@ -71,7 +71,7 @@ You will need to have ffmpeg installed on your system.
 <a href = "https://github.com/hitenSharm/Discord-Meme-and-Music-Bot/contributors">
   <img src = "https://contrib.rocks/image?repo=hitenSharm/Discord-Meme-and-Music-Bot"/>
 </a>
-
+Made with [contributors-img](https://contrib.rocks)
 
 ## Show your support
 
