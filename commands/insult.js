@@ -45,13 +45,9 @@ module.exports = {
     // else loop over args and send insults
     for (let i = 0; i < args.length; i++) {
       //if either bots are mentioned
+      // console.log(args[i]);
       if (args[i] === TECNO || args[i] === BOT) {
-        msg.channel.send(deflect.toString());
-        //setting timeout to 2500ms
-        await setTimeoutPromise(2500);
-        const reply = await grabInsult();
-        msg.reply(reply.toString());
-
+        msg.reply(deflect.toString());        
         continue;
       }
       //setting timeout to 2500ms
