@@ -26,9 +26,9 @@ module.exports = {
           userRequest: [],
         });
         var embed = new Discord.MessageEmbed()
-        .setTitle("Adding to queue")
-        .setDescription(song.name)
-        .setImage(song.thumbnail, 300, 300);
+          .setTitle("Adding to queue")
+          .setDescription(song.name)
+          .setImage(song.thumbnail,300,300);
         msg.channel.send({ embeds: [embed] });
         break;
         case "stop":
