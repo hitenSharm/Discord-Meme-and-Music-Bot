@@ -67,6 +67,11 @@ You will need to have ffmpeg installed on your system.
 * Website: https://hiten-sharma-website.netlify.app/
 * Github: [@hitenSharm](https://github.com/hitenSharm)
 
+## Contributors
+<a href = "https://github.com/hitenSharm/Discord-Meme-and-Music-Bot/contributors">
+  <img src = "https://contrib.rocks/image?repo=hitenSharm/Discord-Meme-and-Music-Bot"/>
+  </a>
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!
