@@ -9,10 +9,7 @@ module.exports = {
   name: "obm",
   description: "Work with Music",
   async execute(msg, args) {
-    num = 0;
-    msg.channel.members.forEach(() => {
-      num = num + 1;
-    });
+    // num = msg.author.voice.channel.members.array().length
     const guildQueue = client.player.getQueue(msg.guild.id);
     var cmd = args[0];
     args.shift();
@@ -29,41 +26,43 @@ module.exports = {
           userRequest: [],
         });
         var embed = new Discord.MessageEmbed()
-          .setTitle("Adding to queue")
-          .setDescription(song.name)
-          .setImage(song.thumbnail,300,300);
+        .setTitle("Adding to queue")
+        .setDescription(song.name)
+        .setImage(song.thumbnail, 300, 300);
         msg.channel.send({ embeds: [embed] });
         break;
-      case "stop":
-        //try and catch
-        try {
-          msg.member.voice.channel.members;
-          guildQueue.stop();
-        } catch (error) {
-          msg.reply(
-            "Only the ones who hear the music may stop the music \n -Aristotle, probably"
-          );
-        }
-        break;
-      case "skip":
-        try {
-          //checks if person is in voice chat
-          msg.member.voice.channel.members;
-
-          //checks if user_id is repeating, if not adds skipCount and 
-          //appends user to userRequest
-          if (!song.data.userRequest.includes(msg.author.id)) {
-            song.data.userRequest.push(msg.author.id);
-            song.data.skipCounts = song.data.skipCounts + 1;
+        case "stop":
+          //try and catch
+          try {
+            guildQueue.stop();
+          } catch (error) {
             msg.reply(
-                `\n ** ${song.data.skipCounts} / ${num - 1} ** want to skip`
+              "Only the ones who hear the music may stop the music \n -Aristotle, probably"
               );
+            }
+            break;
+            case "skip":
+              try {
+                //checks if person is in voice chat
+                // msg.member.voice.channel.members;
+                msg.member.voice.channel.members;
+                num = 0;
+                msg.member.voice.channel.members.forEach(() => {
+                  num = num + 1;
+                });
+                //checks if user_id is repeating, if not adds skipCount and
+                //appends user to userRequest
+                if (!song.data.userRequest.includes(msg.author.id)) {
+                  song.data.userRequest.push(msg.author.id);
+                  song.data.skipCounts = song.data.skipCounts + 1;
+                  msg.reply(
+                    `\n ** ${song.data.skipCounts} / ${num - 1} ** want to skip`
+                    );
           }
           //prevents repeating requests
-          else
-          msg.reply("(≖᷆︵︣≖)👎"); 
+          else msg.reply("(≖᷆︵︣≖)👎");
           //checks if condition is satisfied
-          if (song.data.skipCounts >= 0.5*(num-1)) guildQueue.skip();
+          if (song.data.skipCounts >= 0.5 * (num - 1)) guildQueue.skip();
         } catch (error) {
           //if outside the VC
           msg.reply("Why are you like this? \n Get some help");
