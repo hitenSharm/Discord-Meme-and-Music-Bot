@@ -8,7 +8,7 @@ const handleError = (error) => {
 
       //when user tries to skip,stop or resume a song without playing any song
     case 'TypeError':
-      return "No song is currently playing!"
+      return "Queue is non-existent"
       break
 
       //When a person has not joined voice channel but tries to play the song using bot
