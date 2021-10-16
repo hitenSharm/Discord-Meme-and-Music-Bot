@@ -78,14 +78,22 @@ Give a ⭐️ if this project helped you!
 
 ***
 
->![gif](https://user-images.githubusercontent.com/56029311/115148239-50fbcc00-a07c-11eb-830f-5da5345d56c4.png)
+<!-- !obmeme command  -->
+>![gif](https://user-images.githubusercontent.com/75155230/137524376-add5d499-dbf0-466b-a4e4-d83ead75bb4b.png)
+
+<!-- !obgif command  -->
+>![gif](https://user-images.githubusercontent.com/75155230/137524528-df5d37f4-69d2-4c23-9185-d4cb6816d278.png)
+
+<!-- !insult command -->
+>![image](https://user-images.githubusercontent.com/75155230/137524755-0ec5dc48-34d3-470c-8b75-0e89593e3172.png)
+
+<!-- !kanyegod -->
+>![image](https://user-images.githubusercontent.com/75155230/137524987-fbdff529-d886-491f-8a07-f2aec6666ee8.png)
+
+<!-- !yoda+text command -->
+>![image](https://user-images.githubusercontent.com/75155230/137526097-4eb0d174-d52e-4819-8073-fcdde94f4c9a.png)
+
+<!-- !obm play command  -->
+![image](https://user-images.githubusercontent.com/75155230/137526424-0480c882-e2fb-4e5f-b896-b9d0c2b2f454.png)
 
 >![image](https://user-images.githubusercontent.com/56029311/115998046-11485d80-a603-11eb-8b12-e9ecef04eb61.png)
-
->![image](https://user-images.githubusercontent.com/56029311/115998055-186f6b80-a603-11eb-956e-1adb88de6b1a.png)
-
->![image](https://user-images.githubusercontent.com/56029311/115998057-1c9b8900-a603-11eb-8c3b-2fd0d42ddbf6.png)
-
->![meme](https://user-images.githubusercontent.com/56029311/115148232-4b05eb00-a07c-11eb-8b63-e0bb3fd30f83.png)
-
->![image](https://user-images.githubusercontent.com/56029311/135068632-02b70191-2710-4fea-b843-35f69be3def7.png)
