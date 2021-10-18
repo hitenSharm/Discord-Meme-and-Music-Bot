@@ -4,13 +4,11 @@ const checkVC = require("../utils/boolVC");
 //initializing
 let queue = 0;
 let song = 0;
-let num = 0;
 
 module.exports = {
   name: "obm",
   description: "Work with Music",
   async execute(msg, args) {
-    // num = msg.author.voice.channel.members.array().length
     const guildQueue = client.player.getQueue(msg.guild.id);
     var cmd = args[0];
     if (checkVC(msg)){ 

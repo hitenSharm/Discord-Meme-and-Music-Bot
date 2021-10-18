@@ -24,6 +24,7 @@
     "nodemon": "^2.0.12",
     "opusscript": "^0.0.8",
     "reddit-image-fetcher": "^2.0.9",
+    "smartestchatbot": "^2.0.1",
     "tenorjs": "^1.0.8"
   }
 }
