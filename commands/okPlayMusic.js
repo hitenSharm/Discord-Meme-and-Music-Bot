@@ -1,9 +1,11 @@
 const Discord = require("discord.js");
+const checkDeaf = require("../utils/boolDeaf");
 const checkVC = require("../utils/boolVC");
 
 //initializing
 let queue = 0;
 let song = 0;
+let num = 0;
 
 module.exports = {
   name: "obm",
@@ -11,9 +13,10 @@ module.exports = {
   async execute(msg, args) {
     const guildQueue = client.player.getQueue(msg.guild.id);
     var cmd = args[0];
-    if (checkVC(msg)){ 
-    args.shift();
-    switch (cmd) {
+    //checks if user is in VC AND if user is not deafened
+    if (checkVC(msg) && !checkDeaf(msg)){ 
+      args.shift();
+      switch (cmd) {
         case "play":
           queue = client.player.createQueue(msg.guild.id);
           await queue.join(msg.member.voice.channel);
