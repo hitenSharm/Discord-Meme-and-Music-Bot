@@ -14,6 +14,13 @@ module.exports = {
     //Emojify the text
     const emojifiedText = await emojify(text)
 
-    msg.channel.send(decode(emojifiedText));
+    //Create an embed
+    const embed={
+      color: 0x0099ff,
+      title: 'Emojified',
+      description: decode(emojifiedText)
+    }
+
+    msg.channel.send({embeds:[embed]});
   },
 };
