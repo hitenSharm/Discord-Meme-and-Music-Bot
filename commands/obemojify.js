@@ -17,7 +17,6 @@ module.exports = {
     //Create an embed
     const embed={
       color: 0x0099ff,
-      title: 'Emojified',
       description: decode(emojifiedText)
     }
 
