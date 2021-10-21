@@ -13,13 +13,29 @@
 ## Install
 
 ```sh
+git clone https://github.com/hitenSharm/Discord-Meme-and-Music-Bot.git
+
+cd Discord-Meme-and-Music-Bot
+
 npm install
 ```
-Set the Discord Token , TENORKEY ,the name given to the bot(env.BOT) and the author username(For example, for me I will set my discord username as env.TECNO) as environment variables!
-
 ## Usage
-You will need your **NodeJS** at version **16** or above, **npm** at version **7** or above and DiscordJS at version 13.
->Get a Discord token using developer tools and a Tenor api key.
+1. You will need your **NodeJS** at version **16** or above, **npm** at version **7** or above and **DiscordJS** at version **13** or above
+2. You will need a [Discord Token](https://discord.com/developers/applications) 
+>Refer to [01:52 - 05:50](https://www.youtube.com/watch?v=SPTfmiYiuok&t=112s) on how to get a Discord Token.
+3. and a [Tenor API key](https://tenor.com/developer/keyregistration)
+
+ 4. Create a `.env` file in `./Discord-Meme-and-Music-Bot` and add the following code :
+ ```sh 
+TOKEN=YOUR_DISCORD_TOKEN
+TENORKEY=TENOR_API_KEY
+TECNO=YOUR_DISCORD_USER_ID
+BOT=BOT_DISCORD_USER_ID
+```
+>example of [Discord User ID](https://forum.truckersmp.com/index.php?/topic/81597-how-to-get-a-discord-users-unique-id/) = <@!707342580754912222>
+5. Run `nodemon index` 
+
+And you're all set to work on your bot!  
 
 Use !help to see all commands
 
@@ -60,6 +76,9 @@ You will need to have ffmpeg installed on your system.
 11. Resume Music
 > !obm resume
 
+12. SmartChat Bot
+> !obm *your text here*
+
 ## Author
 
 👤 **Hiten Sharma**
@@ -77,23 +96,66 @@ You will need to have ffmpeg installed on your system.
 Give a ⭐️ if this project helped you!
 
 ***
+<!-- !obmeme command -->
 
-<!-- !obmeme command  -->
+  
+
 >![gif](https://user-images.githubusercontent.com/75155230/137524376-add5d499-dbf0-466b-a4e4-d83ead75bb4b.png)
 
-<!-- !obgif command  -->
+  
+
+  
+
+<!-- !obgif command -->
+
+  
+
 >![gif](https://user-images.githubusercontent.com/75155230/137524528-df5d37f4-69d2-4c23-9185-d4cb6816d278.png)
 
+  
+
+  
+
 <!-- !insult command -->
+
+  
+
 >![image](https://user-images.githubusercontent.com/75155230/137524755-0ec5dc48-34d3-470c-8b75-0e89593e3172.png)
 
+  
+
+  
+
 <!-- !kanyegod -->
+
+  
+
 >![image](https://user-images.githubusercontent.com/75155230/137524987-fbdff529-d886-491f-8a07-f2aec6666ee8.png)
 
+  
+
+  
+
 <!-- !yoda+text command -->
+
+  
+
 >![image](https://user-images.githubusercontent.com/75155230/137526097-4eb0d174-d52e-4819-8073-fcdde94f4c9a.png)
 
-<!-- !obm play command  -->
-![image](https://user-images.githubusercontent.com/75155230/137526424-0480c882-e2fb-4e5f-b896-b9d0c2b2f454.png)
+  
 
->![image](https://user-images.githubusercontent.com/56029311/115998046-11485d80-a603-11eb-8b12-e9ecef04eb61.png)
+  
+
+<!-- !obm play command -->
+
+  
+
+>![image](https://user-images.githubusercontent.com/75155230/137526424-0480c882-e2fb-4e5f-b896-b9d0c2b2f454.png)
+
+<!-- !anime command -->
+
+>![image](https://user-images.githubusercontent.com/56029311/115998046-11485d80-a603-11eb-8b12-e9ecef04eb61.png)  
+
+<!-- !oobtalk command -->
+
+>![discordChatbot](https://user-images.githubusercontent.com/78155861/138104602-8085913a-6337-4228-8f9f-3db400cf46ad.png)
