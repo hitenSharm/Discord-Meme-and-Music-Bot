@@ -34,7 +34,7 @@ module.exports = {
           color: 0xff0000,
           url:"https://www.youtube.com/watch?v=0gct28UEKws",
           title: `dear @${msg.author.username}`,
-          description:" I may have fallen, but I shall return ",
+          description:" I may have fallen, but I shall return. ",
           thumbnail: {
             url: "https://i.imgur.com/5NqaxYO.jpeg",
           },
