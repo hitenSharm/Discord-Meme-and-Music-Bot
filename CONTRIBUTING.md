@@ -8,7 +8,7 @@ Make sure you follow the following steps while raising a PR to the development b
 
 <ol>
 <li>Go through <a href="https://github.com/hitenSharm/Dicord-Meme-Bot/blob/main/README.md">README.md</a></li>
-<li>Fork the repo. (Also maybe star mine XD)</li>
+  <li>Fork the repo. <b>Use the dev branch.</b> (Also maybe star mine XD)</li>
 <li>Clone your fork to your local machine.</li>
 <li>Create a branch with your github username and make changes to your branch.</li>
 
