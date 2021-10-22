@@ -1,27 +1,19 @@
-const axios = require("axios");
-const url = "https://trace.moe/api/search";
-const base64 = require('node-base64-image');
-
-var options = {string: true};
+const url = "https://api.trace.moe/search?anilistInfo&url";
+const fetch = require("node-fetch"); //to use fetch
 
 const animeFinder = async (img) => {
-  var result;  
-  var b64 = await base64.encode(img,options);
-  await axios({
-    method: "post",
-    url: url,
-    data: {
-      image: b64,
-    },
-  })
-    .then(function (response) {
-      //handle success
-      result =response.data.docs[0];
+  let result = 0;
+  await fetch(
+    `${url}=${encodeURIComponent(img)}`
+  )
+    .then((e) => e.json()) //convert to json
+    .then((e) => {
+      result = e;
     })
-    .catch(function (response) {
-      //handle error     
+    .catch((error)=>{
+      console.log(error);
     });
-    return result;
+  return result;
 };
 
 module.exports = animeFinder;

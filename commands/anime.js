@@ -9,10 +9,11 @@ module.exports = {
     temp.forEach(async (element) => {
       var url = element.url;
       var ans = await animeFinder(url);
-      var episode = ans.episode.toString();
-      var similarity = (ans.similarity * 100).toString();
+      var title = JSON.stringify(ans.result[0].anilist.title.english);
+      var episode = ans.result[0].episode;
+      var similarity = (ans.result[0].similarity) * 100;
       const embed = new Discord.MessageEmbed()
-        .setTitle(ans.title_english)
+        .setTitle(title.replace(/\"/g, "")) //to remove doubel quotes
         .setDescription(
           "Episode : " + episode + " Similarity : " + similarity + "%"
         )
