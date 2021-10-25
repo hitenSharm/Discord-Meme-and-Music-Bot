@@ -7,18 +7,19 @@ const Tenor = require("tenorjs").client({
   DateFormat: "D/MM/YYYY - H:mm:ss A",
 });
 
-const sendgif = async () => {
+const sendgif = async (msg, args) => {
   var gifs = [];
   var ans;
-  var randomNumber = Math.floor(Math.random() * gifIdeas.length);
-  var queryGif = gifIdeas[randomNumber];
-  await Tenor.Search.Query(queryGif, "10")
+  if (args.length === 0)
+    var randomNumber = gifIdeas[Math.floor(Math.random() * gifIdeas.length)];
+  else var randomNumber = args;
+  await Tenor.Search.Query(randomNumber, "10")
     .then((Results) => {
       Results.forEach((Post) => {
         gifs.push(Post.url);
       });
     })
-    .catch(console.error);
+    .catch(console.log("Keep going")); //catch will work but wont stop return ans
   randomNumber = Math.floor(Math.random() * 10);
   ans = gifs[randomNumber];
   return ans;

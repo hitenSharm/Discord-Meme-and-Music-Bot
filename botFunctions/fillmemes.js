@@ -1,14 +1,17 @@
 const redditImageFetcher = require("reddit-image-fetcher");
 const subs = require("../choices/optionsSub");
 
-const fillMemes = async () => {
+const fillMemes = async (args) => {
   var ans;
-  var randomNo = Math.floor(Math.random() * subs.length);
+  if(args.length === 0)
+  var randomNo = [subs[Math.floor(Math.random() * subs.length)]];
+  else 
+  var randomNo = args;
   await redditImageFetcher
     .fetch({
       type: "custom",
       total: 1,
-      addSubreddit: [subs[randomNo]],
+      addSubreddit: randomNo,
     })
     .then((result) => {
       ans = result[0];
