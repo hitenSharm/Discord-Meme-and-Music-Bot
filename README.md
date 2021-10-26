@@ -44,11 +44,13 @@ You will need to have ffmpeg installed on your system.
 
 # Bot Commands
 1. View a meme / View a meme from particular subreddit: 
-> !obmeme \n
+> !obmeme 
+
 > !obmeme subreddit_1 subreddit_2 .... subreddit_n
 
 2. Generate Random/Specific gif
-> !obgif \n
+> !obgif 
+
 > !obgif title_1 title_2 .... title_n
 
 3. Generate an insult
