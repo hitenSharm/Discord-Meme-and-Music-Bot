@@ -43,11 +43,13 @@ Use !help to see all commands
 You will need to have ffmpeg installed on your system.
 
 # Bot Commands
-1. View a meme: 
+1. View a meme / View a meme from particular subreddit: 
 > !obmeme
+> !obmeme subreddit_1 subreddit_2 .... subreddit_n
 
-2. Generate Random gif
+2. Generate Random/Specific gif
 > !obgif
+> !obgif title_1 title_2 .... title_n
 
 3. Generate an insult
 > !insult @username
@@ -101,6 +103,7 @@ Give a ⭐️ if this project helped you!
   
 
 >![gif](https://user-images.githubusercontent.com/75155230/137524376-add5d499-dbf0-466b-a4e4-d83ead75bb4b.png)
+>![memeexamlpe](https://user-images.githubusercontent.com/78155861/138863908-22c0aaa7-2c15-48f0-82b7-b6d27c44b897.png)
 
   
 
@@ -111,6 +114,7 @@ Give a ⭐️ if this project helped you!
   
 
 >![gif](https://user-images.githubusercontent.com/75155230/137524528-df5d37f4-69d2-4c23-9185-d4cb6816d278.png)
+>![gifexample](https://user-images.githubusercontent.com/78155861/138863914-553f20fe-e2df-4a0f-b6f7-f388dadd053b.png)
 
   
 
