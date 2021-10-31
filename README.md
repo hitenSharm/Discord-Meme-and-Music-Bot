@@ -66,6 +66,8 @@ You will need to have ffmpeg installed on your system.
 > !yoda + yourText
 
 7. Play Music
+> !obm play (Play a random song) 
+
 > !obm play <song_name> 
 
 8. Skip Music
@@ -82,6 +84,9 @@ You will need to have ffmpeg installed on your system.
 
 12. SmartChat Bot
 > !obm *your text here*
+
+13. Text to Emoji
+> !obmemojify *your text here*
 
 ## Author
 
@@ -156,6 +161,12 @@ Give a ⭐️ if this project helped you!
 
   
 
+>![obmplayyy](https://user-images.githubusercontent.com/78155861/139595286-31a50be3-f30c-4832-aa00-8e471dc2b815.png)
+
+<!-- !obm play command -->
+
+  
+
 >![image](https://user-images.githubusercontent.com/75155230/137526424-0480c882-e2fb-4e5f-b896-b9d0c2b2f454.png)
 
 <!-- !anime command -->
@@ -165,3 +176,8 @@ Give a ⭐️ if this project helped you!
 <!-- !oobtalk command -->
 
 >![discordChatbot](https://user-images.githubusercontent.com/78155861/138104602-8085913a-6337-4228-8f9f-3db400cf46ad.png)
+
+<!-- !oobtalk command -->
+
+>![emojifysafh](https://user-images.githubusercontent.com/78155861/139595289-0f29df4f-82a4-4f0c-974d-3448eb77858e.png)
+
