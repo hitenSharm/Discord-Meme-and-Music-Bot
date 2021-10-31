@@ -48,7 +48,6 @@ module.exports = {
         case "resume":
           //checks if user and bot are in the same channel
           musicFunction.resumeMusic(msg, guildQueue);
-          console.log(guildQueue);
           break;
         default:
           break;
