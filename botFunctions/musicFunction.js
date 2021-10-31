@@ -10,7 +10,6 @@ let songTitle = "hello";
 //gets first song ready when bot starts
 getChart("hot-100", todayDate, (err, chart) => {
   if (err) console.log(err);
-  console.log(chart.songs[Math.round(Math.random() * 99)].title);
   songTitle = chart.songs[Math.round(Math.random() * 99)].title;
 });
 
