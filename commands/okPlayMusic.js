@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const checkDeaf = require("../utils/boolDeaf");
 const boolVC = require("../utils/boolVC");
+const musicFunction = require("../botFunctions/musicFunction");
 
 //initializing
 let queue = 0;
@@ -19,61 +20,35 @@ module.exports = {
       switch (cmd) {
         case "play":
           queue = client.player.createQueue(msg.guild.id);
-          await queue.join(msg.member.voice.channel);
-          //setting data -> skipCounts and userRequests
-          //checks if user and bot are in the same channel
-          if (boolVC.sameVC(msg)) {
-            song = await queue.play(args.join(" ")).catch((_) => {
-              if (!guildQueue) queue.stop();
+          //resolving promise
+          musicFunction
+            .playMusic(msg, args, guildQueue, queue)
+            .then(function (result) {
+              song = result;
             });
-            song.setData({
-              skipCounts: 0,
-              userRequest: [],
-            });
-            var embed = new Discord.MessageEmbed()
-              .setTitle("Adding to queue")
-              .setDescription(song.name)
-              .setImage(song.thumbnail, 300, 300);
-            msg.channel.send({ embeds: [embed] });
-          }
           break;
         case "stop":
           //checks if user and bot are in the same channel
-          if (boolVC.sameVC(msg)) guildQueue.stop();
+          musicFunction.stopMusic(msg, guildQueue);
           break;
         case "skip":
           //checks if user and bot are in the same channel
           if (boolVC.sameVC(msg)) {
-            msg.member.voice.channel.members.forEach(() => {
-              num = num + 1;
-            });
-            //checks if user_id is repeating, if not adds skipCount and
-            //appends user to userRequest
-            if (!song.data.userRequest.includes(msg.author.id)) {
-              song.data.skipCounts = song.data.skipCounts + 1;
-              song.data.userRequest.push(msg.author.id);
-              msg.reply(
-                `\n\t ** ${song.data.skipCounts} / ${num - 1} ** want to skip`
-              );
-            }
-            //prevents repeating requests
-            else msg.reply("(≖᷆︵︣≖)👎");
-            //checks if condition is satisfied
-            if (song.data.skipCounts >= 0.5 * (num - 1)) guildQueue.skip();
+            musicFunction.skipMusic(msg, guildQueue, song);
           }
           break;
         case "progress":
-          const ProgressBar = guildQueue.createProgressBar();
           //checks if user and bot are in the same channel
-          if (boolVC.sameVC(msg)) msg.reply(ProgressBar.prettier);
+          musicFunction.progressBar(msg, guildQueue);
           break;
         case "pause":
           //checks if user and bot are in the same channel
-          if (boolVC.sameVC(msg)) guildQueue.setPaused(true);
+          musicFunction.pauseMusic(msg, guildQueue);
           break;
         case "resume":
           //checks if user and bot are in the same channel
-          if (boolVC.sameVC(msg)) guildQueue.setPaused(false);
+          musicFunction.resumeMusic(msg, guildQueue);
+          console.log(guildQueue);
           break;
         default:
           break;
