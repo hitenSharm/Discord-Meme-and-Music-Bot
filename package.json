@@ -14,6 +14,7 @@
   "author": "Hiten Sharma",
   "license": "ISC",
   "dependencies": {
+    "billboard-top-100": "^2.5.9",
     "discord-music-player": "^8.2.0",
     "discord-music-system": "^3.3.15",
     "discord.js": "^13.2.0",
