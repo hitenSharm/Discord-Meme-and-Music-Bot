@@ -83,7 +83,7 @@ You will need to have ffmpeg installed on your system.
 > !obm resume
 
 12. SmartChat Bot
-> !obm *your text here*
+> !obtalk *your text here*
 
 13. Text to Emoji
 > !obmemojify *your text here*
